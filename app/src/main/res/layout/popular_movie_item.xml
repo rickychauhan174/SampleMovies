@@ -77,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/tvProgress"
-                android:textSize="6sp"
+                android:textSize="8sp"
                 android:textColor="@color/lt_grey"
                 android:layout_marginTop="3dp"
                 android:text="%" />

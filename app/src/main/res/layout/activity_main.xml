@@ -17,7 +17,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#fcd052"
+                android:textColor="@color/yellow"
                 android:layout_marginStart="21dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
@@ -39,7 +39,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#fcd052"
+                android:textColor="@color/yellow"
                 android:layout_marginStart="21dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"

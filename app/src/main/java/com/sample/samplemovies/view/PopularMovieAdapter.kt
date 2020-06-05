@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.sample.samplemovies.R
+import com.sample.samplemovies.Utils
 import com.sample.samplemovies.model.PopularMoviesResponseModel
 import kotlinx.android.synthetic.main.popular_movie_item.view.*
 import kotlin.collections.ArrayList
@@ -33,10 +34,10 @@ class PopularMovieAdapter (var movieList: ArrayList<PopularMoviesResponseModel.R
         private val popularItemView = view.popularItemView
         fun bind(popularMovieModel: PopularMoviesResponseModel.Results, context: Context) {
             tvTitle.text = popularMovieModel.title
-            tvDate.text = popularMovieModel.release_date
+            tvDate.text = Utils.getReleaseDateFormat(popularMovieModel.release_date!!)
             val rating = (popularMovieModel.vote_average!! * 10).toInt()
             if(rating < 50){
-                pbRating.progressDrawable.setTint(Color.YELLOW)
+                pbRating.progressDrawable.setTint(context.resources.getColor(R.color.yellow,null))
             }else{
                 pbRating.progressDrawable.setTint(Color.GREEN)
             }

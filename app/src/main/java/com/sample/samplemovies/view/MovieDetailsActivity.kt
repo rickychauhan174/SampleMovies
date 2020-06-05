@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.sample.samplemovies.R
+import com.sample.samplemovies.Utils
 import com.sample.samplemovies.databinding.ActivityDetailsBinding
 import com.sample.samplemovies.databinding.ActivityMainBinding
 import com.sample.samplemovies.viewmodel.MovieDetailsViewModel
@@ -40,7 +41,7 @@ class MovieDetailsActivity : AppCompatActivity() {
             .observe(this, Observer { response ->
                 if (response != null) {
                     mBinding.tvTitleDetails.text = response.title
-                    mBinding.tvDateDuration.text = response.release_date.plus(" - ").plus(response.runtime)
+                    mBinding.tvDateDuration.text = Utils.getReleaseDateFormat(response.release_date!!).plus(" - ").plus(Utils.getFormattedMovieTime(response.runtime!!))
                     mBinding.tvOverviewText.text = response.overview
                     setDefaultImage(response.poster_path, mBinding.imgMovieDetails, R.mipmap.ic_launcher)
                     val postAdapter = GenreAdapter(response.genres!!, this)
