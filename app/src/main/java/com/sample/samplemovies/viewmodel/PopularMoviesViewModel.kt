@@ -1,6 +1,5 @@
 package com.sample.samplemovies.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sample.samplemovies.model.PopularMoviesResponseModel
@@ -14,7 +13,8 @@ class PopularMoviesViewModel : ViewModel() {
 
     fun getPopularMovies(page: Int): MutableLiveData<PopularMoviesResponseModel> {
         popularMoviesLiveData = MutableLiveData()
-       val moviesUrl = "popular?api_key=55957fcf3ba81b137f8fc01ac5a31fb5&language=en-US&page=".plus(page)
+        val moviesUrl =
+            "popular?api_key=55957fcf3ba81b137f8fc01ac5a31fb5&language=en-US&page=".plus(page)
         val retrofitCall = RetrofitService.retrofitApiRef().moviesList(moviesUrl)
         retrofitCall.enqueue(object : Callback<PopularMoviesResponseModel> {
 

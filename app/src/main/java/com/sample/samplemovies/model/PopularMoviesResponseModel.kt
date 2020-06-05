@@ -25,7 +25,7 @@ class PopularMoviesResponseModel {
         val runtime: Int? = null
     }
 
-    class Genre{
+    class Genre {
         val id: Int? = 0
         val name: String? = null
     }

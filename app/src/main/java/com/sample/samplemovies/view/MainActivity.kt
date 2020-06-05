@@ -1,9 +1,9 @@
 package com.sample.samplemovies.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -25,12 +25,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
         mBinding = DataBindingUtil.setContentView(this@MainActivity, R.layout.activity_main)
         popularLayoutManager = LinearLayoutManager(this)
         mBinding.rvPopularMovies.layoutManager = popularLayoutManager
-        mBinding.rvNowPlaying.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        mBinding.rvNowPlaying.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         getNowPlayingMovies()
         getPopularMovies()
     }
@@ -44,7 +47,8 @@ class MainActivity : AppCompatActivity() {
                 if (response != null) {
                     totalPageCount = response.total_pages
                     popularMoviesList = response.results!!
-                    popularMoviesAdapter = PopularMovieAdapter(popularMoviesList!!, this@MainActivity)
+                    popularMoviesAdapter =
+                        PopularMovieAdapter(popularMoviesList!!, this@MainActivity)
                     mBinding.rvPopularMovies.adapter = popularMoviesAdapter
                     setPagination()
                 }
@@ -62,8 +66,8 @@ class MainActivity : AppCompatActivity() {
             })
     }
 
-    private fun setPagination(){
-        mBinding.rvPopularMovies.addOnScrollListener(object: RecyclerView.OnScrollListener(){
+    private fun setPagination() {
+        mBinding.rvPopularMovies.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 val visibleItemCount = popularLayoutManager!!.childCount
@@ -77,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun loadMoreItems(){
+    private fun loadMoreItems() {
 
         val viewModel = ViewModelProvider(this).get(PopularMoviesViewModel::class.java)
         viewModel.getPopularMovies(currentPage)
@@ -89,3 +93,4 @@ class MainActivity : AppCompatActivity() {
             })
     }
 }
+
