@@ -1,6 +1,7 @@
 package com.sample.samplemovies.view
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -15,20 +16,21 @@ import com.sample.samplemovies.model.PopularMoviesResponseModel
 import kotlinx.android.synthetic.main.popular_movie_item.view.*
 import kotlin.collections.ArrayList
 
-class PopularMovieAdapter (var movieList: ArrayList<PopularMoviesResponseModel.Results>, val context: Context) : RecyclerView.Adapter<PopularMovieAdapter.PostViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, p1: Int) = PostViewHolder(
+class PopularMovieAdapter (var movieList: ArrayList<PopularMoviesResponseModel.Results>, val context: Context) : RecyclerView.Adapter<PopularMovieAdapter.PopularViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, p1: Int) = PopularViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.popular_movie_item, parent, false)
     )
     override fun getItemCount() = movieList.size
-    override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PopularViewHolder, position: Int) {
         holder.bind(movieList[position],context)
     }
-    inner class PostViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class PopularViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val tvTitle = view.tvTitle
         private val tvDate = view.tvDate
         private val pbRating = view.pbRating
         private val tvProgress = view.tvProgress
         private val imgPopularMovie = view.imgPopularMovie
+        private val popularItemView = view.popularItemView
         fun bind(popularMovieModel: PopularMoviesResponseModel.Results, context: Context) {
             tvTitle.text = popularMovieModel.title
             tvDate.text = popularMovieModel.release_date
@@ -41,6 +43,11 @@ class PopularMovieAdapter (var movieList: ArrayList<PopularMoviesResponseModel.R
             pbRating.progress = rating
             tvProgress.text = rating.toString()
             setDefaultImage(popularMovieModel.poster_path,imgPopularMovie,R.mipmap.ic_launcher)
+            popularItemView.setOnClickListener{
+                val intent = Intent(context, MovieDetailsActivity::class.java)
+                intent.putExtra("movieId",popularMovieModel.id.toString())
+                context.startActivity(intent)
+            }
         }
     }
 

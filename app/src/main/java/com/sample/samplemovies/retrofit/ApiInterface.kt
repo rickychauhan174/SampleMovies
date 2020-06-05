@@ -7,8 +7,8 @@ import retrofit2.http.Url
 
 interface ApiInterface {
     @GET
-    fun popularMoviesList(@Url popularMoviesUrl: String): Call<PopularMoviesResponseModel>
+    fun moviesList(@Url moviesUrl: String): Call<PopularMoviesResponseModel>
 
     @GET
-    fun nowPlayingMoviesList(@Url nowPlayingMoviesUrl: String): Call<PopularMoviesResponseModel>
+    fun movieDetails(@Url movieDetailsUrl: String): Call<PopularMoviesResponseModel.Results>
 }

@@ -3,7 +3,7 @@ package com.sample.samplemovies.model
 class PopularMoviesResponseModel {
     val page: Int? = 0
     val total_results: Int? = 0
-    val total_pages: String? = null
+    val total_pages: Int? = null
     val results: ArrayList<Results>? = null
 
     class Results {
@@ -21,5 +21,12 @@ class PopularMoviesResponseModel {
         val vote_average: Float? = 0f
         val overview: String? = null
         val release_date: String? = null
+        val genres: ArrayList<Genre>? = null
+        val runtime: Int? = null
+    }
+
+    class Genre{
+        val id: Int? = 0
+        val name: String? = null
     }
 }

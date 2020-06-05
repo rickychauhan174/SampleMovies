@@ -14,7 +14,7 @@ class NowPlayingViewModel : ViewModel() {
     fun getNowPlayingMovies(): MutableLiveData<PopularMoviesResponseModel> {
         nowPlayingLiveData = MutableLiveData()
         val nowPlayingMovieUrl = "now_playing?language=en-US&page=undefined&api_key=55957fcf3ba81b137f8fc01ac5a31fb5"
-        val retrofitCall = RetrofitService.retrofitApiRef().nowPlayingMoviesList(nowPlayingMovieUrl)
+        val retrofitCall = RetrofitService.retrofitApiRef().moviesList(nowPlayingMovieUrl)
         retrofitCall.enqueue(object : Callback<PopularMoviesResponseModel> {
 
             override fun onResponse(

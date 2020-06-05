@@ -1,12 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@android:color/black">
+        android:background="#99000000">
 
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_back"
+            android:layout_marginTop="29dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="24dp"
+            android:id="@+id/imgDetailsBack"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:layout_below="@+id/imgDetailsBack"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            <ImageView
+                android:layout_width="135dp"
+                android:layout_height="201dp"
+                android:id="@+id/imgMovieDetails"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/popular_image_des" />
+            <TextView
+                android:id="@+id/tvTitleDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="2dp"
+                tools:text="Title" />
+
+            <TextView
+                android:id="@+id/tvDateDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lt_grey"
+                android:textSize="12sp"
+                tools:text="Description" />
+        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginEnd="33dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTitleOverviewHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp"
+                        android:text="Overview" />
+                    <TextView
+                        android:id="@+id/tvOverviewText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/lt_grey"
+                        android:textSize="12sp"
+                        tools:text="Description" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvGenre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        tools:listitem="@layout/now_playing_movie_item" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="50dp"

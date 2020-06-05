@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/layoutNowPlayingHeading"
-            tools:listitem="@layout/popular_movie_item" />
+            tools:listitem="@layout/now_playing_movie_item" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +51,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/layoutMostPopularHeading"
-            tools:listitem="@layout/popular_movie_item" />
+            tools:listitem="@layout/popular_movie_item"
+            tools:itemCount="4"/>
 
         <ProgressBar
             android:id="@+id/progressBar"
