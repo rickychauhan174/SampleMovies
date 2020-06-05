@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SampleMovies</string>
+    <string name="popular_image_des">PopularMovieImage</string>
+    <string name="now_playing_image_des">Now Playing</string>
 </resources>
