@@ -3,26 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
+        android:id="@+id/layMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/layMain"
-        android:background="@android:color/black">
+        android:background="@android:color/black"
+        android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/layoutMainTitle"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#212121"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="155dp"
+                android:layout_height="19dp"
+                android:src="@drawable/img_title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutNowPlayingHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/dk_grey"
-            android:id="@+id/layoutNowPlayingHeading">
+            android:layout_below="@+id/layoutMainTitle"
+            android:background="@color/dk_grey">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/yellow"
                 android:layout_marginStart="21dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="Now playing"/>
+                android:text="Now playing"
+                android:textColor="@color/yellow" />
         </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvNowPlaying"
             android:layout_width="match_parent"
@@ -31,28 +48,30 @@
             tools:listitem="@layout/now_playing_movie_item" />
 
         <LinearLayout
+            android:id="@+id/layoutMostPopularHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/dk_grey"
             android:layout_below="@+id/rvNowPlaying"
-            android:id="@+id/layoutMostPopularHeading">
+            android:background="@color/dk_grey">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/yellow"
                 android:layout_marginStart="21dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="Most popular"/>
+                android:text="Most popular"
+                android:textColor="@color/yellow" />
         </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvPopularMovies"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_below="@+id/layoutMostPopularHeading"
-            tools:listitem="@layout/popular_movie_item"
-            tools:itemCount="4"/>
+            android:layout_marginTop="10dp"
+            tools:itemCount="4"
+            tools:listitem="@layout/popular_movie_item" />
 
         <ProgressBar
             android:id="@+id/progressBar"
