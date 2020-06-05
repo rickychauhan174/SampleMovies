@@ -12,14 +12,14 @@
         <LinearLayout
             android:id="@+id/layoutMainTitle"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:background="#212121"
+            android:layout_height="@dimen/dim_65"
+            android:background="@color/title_black"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="155dp"
-                android:layout_height="19dp"
+                android:layout_width="@dimen/dim_155"
+                android:layout_height="@dimen/dim_19"
                 android:src="@drawable/img_title" />
         </LinearLayout>
 
@@ -33,10 +33,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="21dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="Now playing"
+                android:layout_marginStart="@dimen/dim_21"
+                android:layout_marginTop="@dimen/dim_5"
+                android:layout_marginBottom="@dimen/dim_5"
+                android:text="@string/now_playing"
                 android:textColor="@color/yellow" />
         </LinearLayout>
 
@@ -57,10 +57,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="21dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="Most popular"
+                android:layout_marginStart="@dimen/dim_21"
+                android:layout_marginTop="@dimen/dim_5"
+                android:layout_marginBottom="@dimen/dim_5"
+                android:text="@string/most_popular"
                 android:textColor="@color/yellow" />
         </LinearLayout>
 
@@ -69,14 +69,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/layoutMostPopularHeading"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/dim_10"
             tools:itemCount="4"
             tools:listitem="@layout/popular_movie_item" />
 
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/dim_50"
+            android:layout_height="@dimen/dim_50"
             android:layout_centerInParent="true"
             android:visibility="gone" />
 

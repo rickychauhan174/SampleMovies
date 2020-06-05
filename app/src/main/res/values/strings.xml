@@ -2,4 +2,8 @@
     <string name="app_name">SampleMovies</string>
     <string name="popular_image_des">PopularMovieImage</string>
     <string name="now_playing_image_des">Now Playing</string>
+    <string name="now_playing">Now playing</string>
+    <string name="most_popular">Most popular</string>
+    <string name="overview">Overview</string>
+    <string name="percent">%</string>
 </resources>

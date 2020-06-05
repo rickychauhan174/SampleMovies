@@ -5,15 +5,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#99000000">
+        android:background="@color/transparent">
 
         <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="@dimen/dim_18"
+            android:layout_height="@dimen/dim_18"
             android:src="@drawable/ic_back"
-            android:layout_marginTop="29dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginTop="@dimen/dim_29"
+            android:layout_marginStart="@dimen/dim_15"
+            android:layout_marginBottom="@dimen/dim_24"
             android:id="@+id/imgDetailsBack"/>
         <ScrollView
             android:layout_width="match_parent"
@@ -29,12 +29,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginStart="33dp"
-            android:layout_marginEnd="33dp"
+            android:layout_marginStart="@dimen/dim_33"
+            android:layout_marginEnd="@dimen/dim_33"
             android:gravity="center_horizontal">
             <ImageView
-                android:layout_width="135dp"
-                android:layout_height="201dp"
+                android:layout_width="@dimen/dim_135"
+                android:layout_height="@dimen/dim_201"
                 android:id="@+id/imgMovieDetails"
                 android:scaleType="centerCrop"
                 android:contentDescription="@string/popular_image_des" />
@@ -43,11 +43,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:textSize="14sp"
+                android:textSize="@dimen/dim_14sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="2dp"
+                android:layout_marginTop="@dimen/dim_5"
+                android:layout_marginBottom="@dimen/dim_2"
                 tools:text="Title" />
 
             <TextView
@@ -55,15 +55,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/lt_grey"
-                android:textSize="12sp"
+                android:textSize="@dimen/dim_12sp"
                 tools:text="Description" />
         </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginStart="33dp"
-                    android:layout_marginEnd="33dp"
+                    android:layout_marginTop="@dimen/dim_20"
+                    android:layout_marginStart="@dimen/dim_33"
+                    android:layout_marginEnd="@dimen/dim_33"
                     android:orientation="vertical">
 
                     <TextView
@@ -71,25 +71,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@android:color/white"
-                        android:textSize="14sp"
+                        android:textSize="@dimen/dim_14sp"
                         android:maxLines="1"
                         android:ellipsize="end"
                         android:textStyle="bold"
-                        android:layout_marginBottom="10dp"
-                        android:text="Overview" />
+                        android:layout_marginBottom="@dimen/dim_10"
+                        android:text="@string/overview" />
                     <TextView
                         android:id="@+id/tvOverviewText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/lt_grey"
-                        android:textSize="12sp"
+                        android:textSize="@dimen/dim_12sp"
                         tools:text="Description" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvGenre"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="22dp"
+                        android:layout_marginTop="@dimen/dim_22"
                         tools:listitem="@layout/now_playing_movie_item" />
                 </LinearLayout>
 
@@ -97,8 +97,8 @@
         </ScrollView>
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/dim_50"
+            android:layout_height="@dimen/dim_50"
             android:layout_centerInParent="true"
             android:visibility="gone" />
 

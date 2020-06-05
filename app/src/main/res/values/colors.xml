@@ -6,4 +6,6 @@
     <color name="lt_grey">#e5e5e5</color>
     <color name="dk_grey">#767676</color>
     <color name="yellow">#fcd052</color>
+    <color name="title_black">#212121</color>
+    <color name="transparent">#99000000</color>
 </resources>
