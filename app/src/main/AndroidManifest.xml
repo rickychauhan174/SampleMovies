@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.MovieDetailsActivity"
+        <activity android:name=".view.details.MovieDetailsActivity"
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"
             android:screenOrientation="portrait"/>
-        <activity android:name=".view.MainActivity"
+        <activity android:name=".view.movieslist.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

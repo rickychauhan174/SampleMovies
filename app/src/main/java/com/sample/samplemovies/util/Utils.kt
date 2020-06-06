@@ -2,6 +2,7 @@ package com.sample.samplemovies.util
 
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.time.Duration
 
 object Utils {
     fun getReleaseDateFormat(inputDate: String): String {
@@ -15,6 +16,14 @@ object Utils {
     fun getFormattedMovieTime(inputTime: Int): String {
         val hours: Int = inputTime / 60
         val minutes: Int = inputTime % 60
-        return hours.toString().plus("h").plus(" ").plus(minutes).plus("m")
+        var formattedTime = "--"
+        if(hours > 0 && minutes <= 0){
+            formattedTime = hours.toString().plus("h")
+        }else if(hours <= 0 && minutes > 0){
+            formattedTime = minutes.toString().plus("m")
+        }else if(hours > 0 && minutes > 0){
+            formattedTime =  hours.toString().plus("h").plus(" ").plus(minutes).plus("m")
+        }
+        return formattedTime
     }
 }

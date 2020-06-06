@@ -1,4 +1,4 @@
-package com.sample.samplemovies.view
+package com.sample.samplemovies.view.movieslist
 
 import android.os.Bundle
 import android.view.View
@@ -48,7 +48,10 @@ class MainActivity : AppCompatActivity() {
                     totalPageCount = response.total_pages
                     popularMoviesList = response.results!!
                     popularMoviesAdapter =
-                        PopularMovieAdapter(popularMoviesList!!, this@MainActivity)
+                        PopularMovieAdapter(
+                            popularMoviesList!!,
+                            this@MainActivity
+                        )
                     mBinding.rvPopularMovies.adapter = popularMoviesAdapter
                     setPagination()
                 }
@@ -60,7 +63,11 @@ class MainActivity : AppCompatActivity() {
         viewModel.getNowPlayingMovies()
             .observe(this, Observer { response ->
                 if (response != null) {
-                    val postAdapter = NowPlayingMovieAdapter(response.results!!, this@MainActivity)
+                    val postAdapter =
+                        NowPlayingMovieAdapter(
+                            response.results!!,
+                            this@MainActivity
+                        )
                     mBinding.rvNowPlaying.adapter = postAdapter
                 }
             })

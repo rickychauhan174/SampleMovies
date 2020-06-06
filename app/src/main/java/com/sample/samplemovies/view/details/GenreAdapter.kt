@@ -1,4 +1,4 @@
-package com.sample.samplemovies.view
+package com.sample.samplemovies.view.details
 
 import android.content.Context
 import android.view.LayoutInflater

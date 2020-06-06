@@ -1,4 +1,4 @@
-package com.sample.samplemovies.view
+package com.sample.samplemovies.view.details
 
 import android.os.Bundle
 import android.view.WindowManager
@@ -49,7 +49,11 @@ class MovieDetailsActivity : AppCompatActivity() {
                         R.mipmap.ic_launcher,
                         this
                     )
-                    val postAdapter = GenreAdapter(response.genres!!, this)
+                    val postAdapter =
+                        GenreAdapter(
+                            response.genres!!,
+                            this
+                        )
                     mBinding.rvGenre.adapter = postAdapter
                 }
             })

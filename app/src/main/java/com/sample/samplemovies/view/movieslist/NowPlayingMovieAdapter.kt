@@ -1,4 +1,4 @@
-package com.sample.samplemovies.view
+package com.sample.samplemovies.view.movieslist
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sample.samplemovies.R
 import com.sample.samplemovies.model.PopularMoviesResponseModel
 import com.sample.samplemovies.util.ImageUtils
+import com.sample.samplemovies.view.details.MovieDetailsActivity
 import kotlinx.android.synthetic.main.now_playing_movie_item.view.*
 
 class NowPlayingMovieAdapter(
